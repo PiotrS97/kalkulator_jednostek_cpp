@@ -1,0 +1,75 @@
+#include <iostream>
+using namespace std;
+float przelicznik_km = 0.001;
+float przelicznik_cal = 39.37;
+
+void kilometry()
+{
+    float m;
+    float km;
+    cout << "Wprowadz metry : ";
+    cin >> m;
+    km = przelicznik_km * m;
+    cout << endl << "Twoj wynik to : " << km<<" km"<<endl;
+}
+
+void centymetry()
+{
+    float m;
+    float cm;
+    cout << "Wprowadz metry : ";
+    cin >> m;
+    cm = 100 * m;
+    cout << endl << "Twoj wynik to : " << cm <<" cm"<<endl;
+}
+void milimetry()
+{
+    float m;
+    float mm;
+    cout << "Wprowadz metry : ";
+    cin >> m;
+    mm = 1000 * m;
+    cout << endl << "Twoj wynik to : " << mm<<" mm"<<endl;
+}
+void cale()
+{
+    float m;
+    float cal;
+    cout << "Wprowadz metry : ";
+    cin >> m;
+    cal = przelicznik_cal * m;
+    cout << endl << "Twoj wynik to : " << cal <<" inch"<<endl;
+}
+
+int main()
+{
+    cout<< "Witaj w programie!" << endl << "Program ma za zadanie przeliczac metry na rozne jednostki miary." << endl;
+    cout << endl;
+    bool n = 1;
+    do {
+        cout << "Wybierz jedna z ponizszych opcji: " << endl << "[1] Kilometry" << endl << "[2] Centymetry" << endl << "[3] Milimetry" << endl<<"[4] Cale" << endl;
+        int opcja;
+        cin >> opcja;
+        switch (opcja)
+        {
+        case 1:
+            kilometry();
+            break;
+        case 2:
+            centymetry();
+            break;
+        case 3:
+            milimetry();
+            break;
+        case 4:
+            cale();
+            break;
+        default:
+            cout << "Koniec ";
+            n = 0;
+            break;
+        }
+        cout << endl;
+    } while (n);
+    return 0;
+}
